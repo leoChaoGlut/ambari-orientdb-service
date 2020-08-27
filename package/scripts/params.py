@@ -23,13 +23,15 @@ custom_properties = config['configurations']['custom.properties']
 automatic_backup_json = config['configurations']['automatic-backup.json']
 custom_sql_functions_json = config['configurations']['custom-sql-functions.json']
 default_distributed_db_config_json = config['configurations']['default-distributed-db-config.json']
-hazelcast_xml = config['configurations']['hazelcast.properties']
+hazelcast_xml = config['configurations']['hazelcast_config']
 jdbc_drivers_json = config['configurations']['jdbc-drivers.json']
 orientdb_client_log_properties = config['configurations']['orientdb-client-log.properties']
 orientdb_etl_log_properties = config['configurations']['orientdb-etl-log.properties']
-orientdb_server_config_xml = config['configurations']['orientdb-server-config.properties']
+orientdb_server_config_xml = config['configurations']['orientdb-server-config_config']
 orientdb_server_log_properties = config['configurations']['orientdb-server-log.properties']
 security_json = config['configurations']['security.json']
+
+print(config['configurations'])
 
 host_info = config['clusterHostInfo']
 host_level_params = config['hostLevelParams']

@@ -43,11 +43,11 @@
                 <config-type>automatic-backup.json</config-type>
                 <config-type>custom-sql-functions.json</config-type>
                 <config-type>default-distributed-db-config.json</config-type>
-                <config-type>hazelcast.properties</config-type>
+                <config-type>hazelcast_config</config-type>
                 <config-type>jdbc-drivers.json</config-type>
                 <config-type>orientdb-client-log.properties</config-type>
                 <config-type>orientdb-etl-log.properties</config-type>
-                <config-type>orientdb-server-config.properties</config-type>
+                <config-type>orientdb-server-config_config</config-type>
                 <config-type>orientdb-server-log.properties</config-type>
                 <config-type>security.json</config-type>
             </configuration-dependencies>

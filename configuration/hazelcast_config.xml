@@ -23,7 +23,7 @@
 
     <property>
         <name>content</name>
-        <display-name>hazelcast.xml.xml</display-name>
+        <display-name>hazelcast_config.xml</display-name>
         <value>
             <![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
