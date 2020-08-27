@@ -61,10 +61,14 @@
 	<network>
 		<port auto-increment="true">2434</port>
 		<join>
-			<multicast enabled="true">
+			<multicast enabled="false">
 				<multicast-group>235.1.1.1</multicast-group>
 				<multicast-port>2434</multicast-port>
 			</multicast>
+            <tcp-ip enabled="true">
+                <member>dataslave02:2434</member>
+                <member>dataslave03:2434</member>
+            </tcp-ip>
 		</join>
 	</network>
 	<executor-service>
