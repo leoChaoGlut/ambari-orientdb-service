@@ -26,4 +26,4 @@ orientdbConfPath = orientdbHome + '/config'
 orientdbTarUrl = config.get('download', 'orientdb_tar_url')
 orientdbTarName = orientdbTarUrl.split('/')[-1]
 
-startCmd = 'nohup ./bin/dserver.sh > orientdb.out 2>&1'
+startCmd = 'nohup ./bin/dserver.sh > orientdb.out 2>&1 &'
