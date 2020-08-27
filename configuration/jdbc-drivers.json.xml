@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+/**
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<configuration>
+
+    <property>
+        <name>content</name>
+        <display-name>jdbc-drivers.json.xml</display-name>
+        <value>
+            <![CDATA[
+{
+  "Oracle": {
+    "className": "oracle.jdbc.driver.OracleDriver",
+    "url": "http://svn.ets.berkeley.edu/nexus/content/repositories/myberkeley/com/oracle/ojdbc7/12.1.0.1/ojdbc7-12.1.0.1.jar",
+    "version": "7-12.1.0.1",
+    "format": [
+      "jdbc:oracle:thin:@<HOST>:<PORT>:<SID>"
+    ]
+  },
+  "SQLServer": {
+    "className": "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+    "url": "http://www.java2s.com/Code/JarDownload/sqljdbc4/sqljdbc4-2.0.jar.zip",
+    "version": "4.2.0",
+    "format": [
+      "jdbc:sqlserver://<HOST>:<PORT>;databaseName=<DB>"
+    ]
+  },
+  "MySQL": {
+    "className": "com.mysql.jdbc.Driver",
+    "url": "http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.36/mysql-connector-java-5.1.36.jar",
+    "version": "5.1.36",
+    "format": [
+      "jdbc:mysql://<HOST>:<PORT>/<DB>"
+    ]
+  },
+  "PostgreSQL": {
+    "className": "org.postgresql.Driver",
+    "url": "https://jdbc.postgresql.org/download/postgresql-9.4-1201.jdbc4.jar",
+    "version": "9.4-1201",
+    "format": [
+      "jdbc:postgresql://<HOST>:<PORT>/<DB>"
+    ]
+  },
+  "HyperSQL": {
+    "className": "org.hsqldb.jdbc.JDBCDriver",
+    "url": "http://central.maven.org/maven2/org/hsqldb/hsqldb/2.3.3/hsqldb-2.3.3.jar",
+    "version": "2.3.3",
+    "format": [
+      "jdbc:hsqldb:hsql://<HOST>:<PORT>",
+      "jdbc:hsqldb:file:<filepath>"
+    ]
+  }
+}
+
+            ]]>
+        </value>
+        <value-attributes>
+            <type>content</type>
+            <show-property-name>false</show-property-name>
+        </value-attributes>
+        <on-ambari-upgrade add="true"/>
+    </property>
+
+</configuration>

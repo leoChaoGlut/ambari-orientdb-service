@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+# -*- coding: utf-8 -*-
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+-->
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>ORIENTDB</name>
+            <displayName>OrientDB</displayName>
+            <comment>Azkaban is a batch workflow job scheduler created at LinkedIn to run Hadoop jobs. Azkaban resolves
+                the ordering through job dependencies and provides an easy to use web user interface to maintain and
+                track your workflows.
+            </comment>
+            <version>3.1.2</version>
+            <components>
+                <component>
+                    <name>ORIENTDB</name>
+                    <displayName>OrientDB</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <versionAdvertised>true</versionAdvertised>
+                    <commandScript>
+                        <script>scripts/orientdb.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>300</timeout>
+                    </commandScript>
+                </component>
+            </components>
+
+            <configuration-dependencies>
+                <config-type>custom.properties</config-type>
+
+                <config-type>automatic-backup.json</config-type>
+                <config-type>custom-sql-functions.json</config-type>
+                <config-type>default-distributed-db-config.json</config-type>
+                <config-type>hazelcast.xml</config-type>
+                <config-type>jdbc-drivers.json</config-type>
+                <config-type>orientdb-client-log.properties</config-type>
+                <config-type>orientdb-etl-log.properties</config-type>
+                <config-type>orientdb-server-config.xml</config-type>
+                <config-type>orientdb-server-log.properties</config-type>
+                <config-type>security.json</config-type>
+            </configuration-dependencies>
+
+        </service>
+    </services>
+</metainfo>
