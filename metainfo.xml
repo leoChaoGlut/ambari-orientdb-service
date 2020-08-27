@@ -27,7 +27,7 @@
                     <name>ORIENTDB</name>
                     <displayName>OrientDB</displayName>
                     <category>MASTER</category>
-                    <cardinality>1</cardinality>
+                    <cardinality>1+</cardinality>
                     <versionAdvertised>true</versionAdvertised>
                     <commandScript>
                         <script>scripts/orientdb.py</script>
