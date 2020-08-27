@@ -20,11 +20,11 @@ from resource_management.core.resources.system import Execute
 from resource_management.libraries.script.script import Script
 
 
-class WebServer(Script):
+class OrientDB(Script):
     def install(self, env):
         tmpOrientdbTarPath = '/tmp/' + orientdbTarName
         Execute('mkdir -p {0}'.format(orientdbHome))
-        Execute('wget --no-check-certificate {0} -O {1}'.format(orientdbTarUrl, tmpOrientdbTarPath))
+        Execute('wget {0} -O {1}'.format(orientdbTarUrl, tmpOrientdbTarPath))
         Execute('tar -xf {0} -C {1} --strip-components=1'.format(tmpOrientdbTarPath, orientdbHome))
 
     def stop(self, env):
@@ -58,44 +58,44 @@ class WebServer(Script):
 
         with open(path.join(orientdbConfPath, 'automatic-backup.json'), 'w') as f:
             if automatic_backup_json.has_key('content'):
-                f.write(str(automatic_backup_json['content']))
+                f.write(automatic_backup_json['content'].strip())
 
         with open(path.join(orientdbConfPath, 'custom-sql-functions.json'), 'w') as f:
             if custom_sql_functions_json.has_key('content'):
-                f.write(str(custom_sql_functions_json['content']))
+                f.write(custom_sql_functions_json['content'].strip())
 
         with open(path.join(orientdbConfPath, 'default-distributed-db-config.json'), 'w') as f:
             if default_distributed_db_config_json.has_key('content'):
-                f.write(str(default_distributed_db_config_json['content']))
+                f.write(default_distributed_db_config_json['content'].strip())
 
         with open(path.join(orientdbConfPath, 'hazelcast.xml'), 'w') as f:
             if hazelcast_xml.has_key('content'):
-                f.write(str(hazelcast_xml['content']).strip())
+                f.write(hazelcast_xml['content'].strip())
 
         with open(path.join(orientdbConfPath, 'jdbc-drivers.json'), 'w') as f:
             if jdbc_drivers_json.has_key('content'):
-                f.write(str(jdbc_drivers_json['content']))
+                f.write(jdbc_drivers_json['content'].strip())
 
         with open(path.join(orientdbConfPath, 'orientdb-client-log.properties'), 'w') as f:
             if orientdb_client_log_properties.has_key('content'):
-                f.write(str(orientdb_client_log_properties['content']))
+                f.write(orientdb_client_log_properties['content'].strip())
 
         with open(path.join(orientdbConfPath, 'orientdb-etl-log.properties'), 'w') as f:
             if orientdb_etl_log_properties.has_key('content'):
-                f.write(str(orientdb_etl_log_properties['content']))
+                f.write(orientdb_etl_log_properties['content'].strip())
 
         with open(path.join(orientdbConfPath, 'orientdb-server-config.xml'), 'w') as f:
             if orientdb_server_config_xml.has_key('content'):
-                f.write(str(orientdb_server_config_xml['content']).strip())
+                f.write(orientdb_server_config_xml['content'].strip())
 
         with open(path.join(orientdbConfPath, 'orientdb-server-log.properties'), 'w') as f:
             if orientdb_server_log_properties.has_key('content'):
-                f.write(str(orientdb_server_log_properties['content']))
+                f.write(orientdb_server_log_properties['content'].strip())
 
         with open(path.join(orientdbConfPath, 'security.json'), 'w') as f:
             if security_json.has_key('content'):
-                f.write(str(security_json['content']))
+                f.write(security_json['content'].strip())
 
 
 if __name__ == '__main__':
-    WebServer().execute()
+    OrientDB().execute()

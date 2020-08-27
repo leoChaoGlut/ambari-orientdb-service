@@ -26,4 +26,5 @@ orientdbConfPath = orientdbHome + '/config'
 orientdbTarUrl = config.get('download', 'orientdb_tar_url')
 orientdbTarName = orientdbTarUrl.split('/')[-1]
 
-startCmd = 'nohup ./bin/dserver.sh > orientdb.out 2>&1 &'
+# 使用阿里云ECS时,挂载的硬盘不支持ftruncate的情况下,需要加-Dstorage.disk.useNativeOsAPI=false,详情 https://github.com/orientechnologies/orientdb/issues/9278
+startCmd = 'nohup ./bin/dserver.sh -Dstorage.disk.useNativeOsAPI=false > orientdb.out 2>&1 &'
