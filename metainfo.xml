@@ -38,8 +38,6 @@
             </components>
 
             <configuration-dependencies>
-                <config-type>custom.properties</config-type>
-
                 <config-type>automatic-backup.json</config-type>
                 <config-type>custom-sql-functions.json</config-type>
                 <config-type>default-distributed-db-config.json</config-type>
