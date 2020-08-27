@@ -18,16 +18,16 @@ from resource_management.libraries.script.script import Script
 # config object that holds the configurations declared in the config xml file
 config = Script.get_config()
 
-custom_properties = config['configurations']['custom.properties.xml']
+custom_properties = config['configurations']['custom.properties']
 
 automatic_backup_json = config['configurations']['automatic-backup.json']
 custom_sql_functions_json = config['configurations']['custom-sql-functions.json']
 default_distributed_db_config_json = config['configurations']['default-distributed-db-config.json']
-hazelcast_xml = config['configurations']['hazelcast']
+hazelcast_xml = config['configurations']['hazelcast.properties']
 jdbc_drivers_json = config['configurations']['jdbc-drivers.json']
 orientdb_client_log_properties = config['configurations']['orientdb-client-log.properties']
 orientdb_etl_log_properties = config['configurations']['orientdb-etl-log.properties']
-orientdb_server_config_xml = config['configurations']['orientdb-server-config']
+orientdb_server_config_xml = config['configurations']['orientdb-server-config.properties']
 orientdb_server_log_properties = config['configurations']['orientdb-server-log.properties']
 security_json = config['configurations']['security.json']
 
