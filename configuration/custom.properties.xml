@@ -24,9 +24,9 @@
         <name>healthcheck.port</name>
         <value>2480</value>
     </property>
-    <property>
+    <property require-input="true">
         <name>ORIENTDB_ROOT_PASSWORD</name>
-        <value>1</value>
+        <value></value>
     </property>
 
 </configuration>
