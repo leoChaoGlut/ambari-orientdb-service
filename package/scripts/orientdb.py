@@ -33,7 +33,14 @@ class WebServer(Script):
     def start(self, env):
         self.configure(env)
 
-        Execute('cd ' + orientdbHome + ' && ' + startCmd)
+        from params import custom_properties
+        import socket
+
+        Execute(
+            'export ORIENTDB_ROOT_PASSWORD=' + custom_properties['ORIENTDB_ROOT_PASSWORD'] +
+            ' ORIENTDB_NODE_NAME=' + socket.gethostname() + ' && '
+                                                            'cd ' + orientdbHome + ' && ' + startCmd
+        )
 
     def status(self, env):
         try:
@@ -63,7 +70,7 @@ class WebServer(Script):
 
         with open(path.join(orientdbConfPath, 'hazelcast.xml'), 'w') as f:
             if hazelcast_xml.has_key('content'):
-                f.write(str(hazelcast_xml['content']))
+                f.write(str(hazelcast_xml['content']).strip())
 
         with open(path.join(orientdbConfPath, 'jdbc-drivers.json'), 'w') as f:
             if jdbc_drivers_json.has_key('content'):
@@ -79,7 +86,7 @@ class WebServer(Script):
 
         with open(path.join(orientdbConfPath, 'orientdb-server-config.xml'), 'w') as f:
             if orientdb_server_config_xml.has_key('content'):
-                f.write(str(orientdb_server_config_xml['content']))
+                f.write(str(orientdb_server_config_xml['content']).strip())
 
         with open(path.join(orientdbConfPath, 'orientdb-server-log.properties'), 'w') as f:
             if orientdb_server_log_properties.has_key('content'):
