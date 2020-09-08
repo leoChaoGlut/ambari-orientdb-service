@@ -21,7 +21,7 @@
             <name>ORIENTDB</name>
             <displayName>OrientDB</displayName>
             <comment></comment>
-            <version>3.1.2</version>
+            <version>3.0.34</version>
             <components>
                 <component>
                     <name>ORIENTDB</name>
